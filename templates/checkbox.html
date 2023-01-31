@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>checkbox
+    <form method="POST" action="{% url 'select_multiple' %}">
+        {% csrf_token %}
+        {% for to in topics %}
+            <input type="checkbox" name="topic" id="topic" value="{{to}}">
+            <label for="topic">{{to.topic_name}}</label><br><br>
+        {% endfor %}
+
+
+        <input type="submit" value="checkbox">
+    </form>
+</center>
+</body>
+</html>
